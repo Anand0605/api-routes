@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import './../style.css'
 
 
 const getUser =async()=>{
@@ -16,7 +17,10 @@ const page = async() => {
       {
         userList.map((item)=>(
             
-            <Link href={`userlist/${item.id}`}>{item.name}</Link>
+           <div className='user-item'>
+             <Link href={`userlist/${item.id}`}>{item.name}</Link>
+             <span><Link href={`userlist/${item.id}`}>Edit</Link></span>
+           </div>
         ))
       }
     </div>
