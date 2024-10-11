@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import './../style.css'
+import Deleteuser from '@/utils/Deleteuser';
 
 
 const getUser =async()=>{
@@ -20,6 +21,7 @@ const page = async() => {
            <div className='user-item'>
              <Link href={`userlist/${item.id}`}>{item.name}</Link>
              <span><Link href={`userlist/${item.id}`}>Edit</Link></span>
+             <Deleteuser id={item.id}/>
            </div>
         ))
       }
